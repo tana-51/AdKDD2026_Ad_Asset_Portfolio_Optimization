@@ -1,0 +1,11 @@
+defaults:
+  - setting: default
+  - _self_
+hydra:
+  job:
+    chdir: False
+  run:
+    dir: ./result/${setting.wandb.train_name}/${setting.dataset.independent_reward_type}/beta_first=${setting.dataset.beta_first}
+  sweep:
+    dir: ./result/${setting.wandb.train_name}/${setting.dataset.independent_reward_type}/beta_first=${setting.dataset.beta_first}
+    subdir: ./
